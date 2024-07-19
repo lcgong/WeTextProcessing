@@ -75,12 +75,12 @@ class Processor:
         self.verbalizer = self.delete_tokens(verbalizer)
 
     def build_fst(self, prefix, cache_dir, overwrite_cache):
-        logger = logging.getLogger('wetext-{}'.format(self.name))
-        logger.setLevel(logging.INFO)
-        handler = logging.StreamHandler()
-        fmt = logging.Formatter('%(asctime)s WETEXT %(levelname)s %(message)s')
-        handler.setFormatter(fmt)
-        logger.addHandler(handler)
+        logger = logging.getLogger('wetext.{}'.format(self.name))
+        # logger.setLevel(logging.INFO)
+        # handler = logging.StreamHandler()
+        # fmt = logging.Formatter('%(asctime)s WETEXT %(levelname)s %(message)s')
+        # handler.setFormatter(fmt)
+        # logger.addHandler(handler)
 
         os.makedirs(cache_dir, exist_ok=True)
         tagger_name = '{}_tagger.fst'.format(prefix)
